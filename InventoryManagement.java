@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -33,7 +32,7 @@ class InventoryManagement{
 
 		}while(!inputString.equals("exit"));
 	}
-
+// function to accept user input
 	private static void processInput(String inputString) {
 		String[] tokens = inputString.split(" ");
 		if(tokens.length>0){
@@ -50,7 +49,7 @@ class InventoryManagement{
 			case "report_animalFeed": reportAnimalFeed(tokens);
 			break;
 
-			case "report_speciesFeed": reportSpeciesFees(tokens);
+			case "report_speciesFeed": reportSpeciesFeed(tokens);
 			break;
 
 			case "report_wastage": getWastage(tokens);
@@ -77,7 +76,7 @@ class InventoryManagement{
 			System.err.println("No Input Found");
 		}
 	}
-
+// reports the current feed of given zooid or all zoos
 	private static void reportFeed(String[] tokens) {
 		if(tokens.length==2){
 			if(validate("Zoo",tokens[1])){
@@ -99,7 +98,7 @@ class InventoryManagement{
 			}
 		}
 	}
-
+// inputs animal by zooid, animalid, speciesid
 	private static void inputAnimal(String[] tokens) {
 		if(tokens.length==4){
 			int zooId = Integer.parseInt(tokens[1]);
@@ -150,9 +149,11 @@ class InventoryManagement{
 			speciesList.put(speciesId, zooTemp);
 		}
 	}
+// input above or below average
+// gives species statistics above or below by given average
 
 	private static void generateVal(String[] tokens) {
-		if(tokens.length<=3){
+		if(tokens.length==3){
 			HashMap<Integer, Double> feedFreq = new HashMap<Integer, Double>();
 			HashMap<Integer, Double> feedQuantity = new HashMap<Integer, Double>();
 			generatestats(feedFreq, feedQuantity);
@@ -239,8 +240,9 @@ class InventoryManagement{
 		double temp = (val1/val_baseline);
 		return temp;
 	}
-
-	private static void reportSpeciesFees(String[] tokens) {
+// report species feed by zooid, speciesid
+// reports average feed frequency for species
+	private static void reportSpeciesFeed(String[] tokens) {
 		if(tokens.length==3){
 			if(tokens[1].equals("z")||tokens[1].equals("Z")){
 				if(validate("Zoo", tokens[2])){
@@ -272,6 +274,7 @@ class InventoryManagement{
 		}
 	}
 
+// gives wastage per zoo
 	private static void getWastage(String[] tokens) {
 		if(tokens.length==1){
 			gettotalWastage();
@@ -293,7 +296,8 @@ class InventoryManagement{
 			zooList.get(zooId).getWastagePrint();
 		}
 	}
-
+// report animal feed given by zooid, animalid
+// reports animal feed per day
 	private static void reportAnimalFeed(String[] tokens) {
 
 		if(tokens.length==1){
@@ -337,7 +341,7 @@ class InventoryManagement{
 			zooList.get(zooId).getAnimalFeedFreq(animalId);
 		}
 	}
-
+// update feed by zooid, animalid, feedia, feedquantity, feedquantity, date
 	private static void feedInsert(String[] tokens) {
 		if(tokens.length==6){
 			if(validate("Zoo",tokens[1])&&validate("Feed",tokens[3])){
@@ -376,7 +380,7 @@ class InventoryManagement{
 			return false;
 		}
 	}
-
+// update inventory by zooid, feedid, feedquantity
 	private static void inventoryUpdate(String[] tokens) {
 		if(tokens.length==4){
 			if(validate("Zoo",tokens[1])&&validate("Feed",tokens[2])){
@@ -396,7 +400,7 @@ class InventoryManagement{
 		}
 
 	}
-
+// insert inventory by zooid, feedid, feedquantity
 	private static void inventoryInsert(String[] tokens) {
 		if(tokens.length==4){
 			if(validate("Zoo",tokens[1])){
