@@ -8,7 +8,7 @@ The overall objectives of the proposed system include:-
 
 The input to the inventory system is as follows - 
 
-TO input inventory to the system Enter - inv_ins zooid(int) feedid(int) feedquantity(int)
+To input inventory to the system Enter - inv_ins zooid(int) feedid(int) feedquantity(int)
 
 To upate inventory Enter - inv_update zooid(int) feedid(int) feedquantity(int)
 
