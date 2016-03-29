@@ -8,23 +8,23 @@ The overall objectives of the proposed system include:-
 
 The input to the inventory system is as follows - 
 
-To input inventory to the system Enter - inv_ins zooid(int) feedid(int) feedquantity(int)
+To input inventory to the system - Enter in the console - inv_ins zooid(int) feedid(int) feedquantity(int)
 
-To upate inventory Enter - inv_update zooid(int) feedid(int) feedquantity(int)
+To upate inventory - Enter in the console - inv_update zooid(int) feedid(int) feedquantity(int)
 
-To update feed Enter - feed_update zooid animalid feedid feedquantity date
+To update feed - Enter in the console - feed_update zooid animalid feedid feedquantity date
 
-To report animal feed Enter -report_animalFeed zooid animalid
+To report animal feed - Enter in the console -report_animalFeed zooid animalid
 
-To report species feed Enter - report_speciesFeed zooid speciesid
+To report species feed - Enter in the console - report_speciesFeed zooid speciesid
 
-To report wastage Enter - report_wastage zooid
+To report wastage - Enter in the console - report_wastage zooid
 
-To report report_speciesStats - above/below avgValue
+To report species average statistics - Enter in the console-  report_speciesStats  above/below avgValue
 
-To input animal Enter - zooid(int) animalid(int) speciesid(int)
+To input animal - Enter in the console - input_animal zooid(int) animalid(int) speciesid(int)
 
-To report feed Enter - report_feed
+To report feed - Enter in the console - report_feed
 
              The Inventory Management System accepts the inputs untill one enters "exit". 
 
