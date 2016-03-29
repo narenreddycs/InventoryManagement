@@ -72,8 +72,8 @@ class Zoo{
 	protected void inventeryValidate(int feedId, int feedLvl){
 		if(feedLevel.containsKey(feedId)){
 		int currentLvl = feedLevel.get(feedId);
-		wastage+=(feedLvl-currentLvl);
-		feedLevel.put(feedId, currentLvl);	
+		wastage+=(currentLvl-feedLvl);
+		feedLevel.put(feedId, feedLvl);	
 		}
 		else{
 			System.err.println("No Inventory Entry for Current FeedId: "+feedId);
