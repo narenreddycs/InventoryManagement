@@ -1,6 +1,6 @@
 # InventoryManagement
 
-This is inventory mangement for zoos.
+This is project is about to build state-of-the-art animal feed inventory management system.
 
 The overall objectives of the proposed system include:-
 • Feed inventory and supply chain management.
